@@ -5,11 +5,6 @@
 *:after {
   box-sizing: border-box;
 }
-.clearfix:after {
-  content: "";
-  display: table;
-  clear: both;
-}
 .firstSection {
   height: 100%;
   background: #1f2222;
@@ -17,23 +12,76 @@
 .logoLoginHolder a {
   float: right;
 }
-.firstSection img {
-  float: left;
-}
 .logoLoginHolder {
   overflow: hidden;
 }
-.hero {
-  padding-top: 100px;
-  color: #ffffff;
+.logoLoginHolder img {
+  float: left;
+  width: 89px;
 }
-.hero h1 {
-  padding-top: 40px;
+.hero {
+  color: #ffffff;
+  position: relative;
+  top: 40%;
+  transform: translateY(-50%);
+  -ms-transform: translateY(-50%);
+  /* IE 9 */
+  -webkit-transform: translateY(-50%);
 }
 .hero img {
   float: right;
   width: 100%;
-  height: 100%;
+  height: auto;
+}
+.hero div:nth-child(1) {
+  vertical-align: middle;
+  padding-right: 50px;
+}
+.hero div:nth-child(2) {
+  vertical-align: top;
+  padding-top: 50px;
+}
+.hero div > h1 {
+  line-height: 38px;
+}
+.hero div > p {
+  line-height: 27px;
+}
+.hr {
+  padding: 0;
+  transform: translateY(-100%);
+}
+.hr hr {
+  height: 7px;
+  border: 0;
+  margin: 0;
+  background-color: #53d998;
+}
+.hr img {
+  position: absolute;
+  left: 50%;
+}
+.secondSection {
+  color: #4d4d4b;
+}
+.secondSection img {
+  width: 100%;
+  height: auto;
+}
+.secondSection .row {
+  padding-bottom: 75px;
+}
+.secondSection .row .col {
+  vertical-align: middle;
+}
+.secondSection .row:nth-child(odd) .featureDescription {
+  padding-left: 50px;
+}
+.secondSection .row:nth-child(even) .featureDescription {
+  padding-right: 50px;
+}
+.secondSection .row:nth-child(even) img {
+  float: right;
 }
 html,
 body {
@@ -43,45 +91,38 @@ body {
   font-family: "Muli", Arial;
   font-size: 1em;
 }
-body > DIV {
-  padding: 40px;
+body > div {
+  padding: 50px 100px;
 }
 h1 {
   font-size: 1.875em;
 }
+h2 {
+  font-size: 1.12em;
+}
 .highlightText {
   color: #53d998;
 }
-/* grid */
-.row {
-  margin: 0 -10px;
-  margin-bottom: 20px;
+a {
+  font-size: 0.875em;
+  text-decoration: none;
+  border: 1px solid #ffffff;
+  border-radius: 10px;
+  padding: 10px 15px;
 }
-.row:last-child {
-  margin-bottom: 0;
+a:link,
+a:visited,
+a:hover,
+a:active {
+  color: #ffffff;
 }
-[class*="col-"] {
-  padding: 10px;
-}
-@media all and (min-width: 600px) {
-  .col-2-3 {
-    float: left;
-    width: 66.66%;
+@media (min-width: 30em) {
+  .row {
+    width: 100%;
+    display: table;
+    table-layout: fixed;
   }
-  .col-1-2 {
-    float: left;
-    width: 50%;
-  }
-  .col-1-3 {
-    float: left;
-    width: 33.33%;
-  }
-  .col-1-4 {
-    float: left;
-    width: 25%;
-  }
-  .col-1-8 {
-    float: left;
-    width: 12.5%;
+  .col {
+    display: table-cell;
   }
 }

@@ -2,10 +2,15 @@
 @darkGrey: #1F2222;
 @white: #ffffff;
 @green: #53D998;
-@bodyPadding: 40px;
-@callToAction: 100px;
+@bodyPaddingUpDown: 50px;
+@bodyPaddingSides: 100px;
+@colsidePadding: 50px;
 @headerH1Desktop: 1.875em;
+@headerH2Desktop: 1.12em;
 @bodyDesktop: 1em;
+@buttonText: 0.875em;
+@greyText: #4D4D4B;
+
 
 /* resets */
 *,
@@ -13,12 +18,6 @@
 *:after {
   box-sizing: border-box;
 }
-.clearfix:after {
-  content: "";
-  display: table;
-  clear: both;
-}
-
 
 .firstSection {
 	height: 100%;
@@ -27,27 +26,82 @@
 .logoLoginHolder a {
   float: right;
 }
-.firstSection img {
-  float: left;
-}
 .logoLoginHolder {
   overflow: hidden;
+  img {
+    float: left;
+    width: 89px;
+  }
 }
 .hero {
-  padding-top: @callToAction;
   color: @white;
-  h1 {
-    padding-top: @bodyPadding;
-  }
+  position: relative;
+  top: 40%;
+  transform: translateY(-50%);
+  -ms-transform: translateY(-50%); /* IE 9 */
+  -webkit-transform: translateY(-50%);
   img {
     float: right;
     width: 100%;
-    height: 100%;
+    height: auto;
   }
-  a {
-
+  div:nth-child(1) {
+    vertical-align: middle;
+    padding-right: @colsidePadding;
+  }
+  div:nth-child(2) {
+    vertical-align: top;
+    padding-top: @bodyPaddingUpDown;
+  }
+  div > h1 {
+    line-height: 38px;
+  }
+  div > p {
+    line-height: 27px;
   }
 }
+.hr {
+  padding: 0;
+  transform: translateY(-100%);
+  hr {
+    height: 7px;
+    border: 0;
+    margin: 0;
+    background-color: @green;
+  }
+  img {
+    position: absolute;
+    left: 50%;
+  }
+}
+
+
+
+.secondSection {
+  color: @greyText;
+  img {
+    width: 100%;
+    height: auto;
+  }
+  .row {
+    padding-bottom: @bodyPaddingSides - 25px;
+    .col {
+      vertical-align: middle;
+    }
+    &:nth-child(odd) .featureDescription {
+      padding-left: @colsidePadding;
+    }
+    &:nth-child(even) .featureDescription {
+      padding-right: @colsidePadding;
+    }
+  }
+  .row:nth-child(even) img {
+    float: right;
+  }
+
+}
+
+
 
 
 html, body {
@@ -57,53 +111,32 @@ body {
   font-family: "Muli", Arial;
   font-size: @bodyDesktop;
 }
-body > DIV {
-  padding: @bodyPadding;
+body > div {
+  padding: @bodyPaddingUpDown @bodyPaddingSides;
 }
 h1 {
   font-size: @headerH1Desktop;
 }
+h2 {
+  font-size: @headerH2Desktop;
+}
 .highlightText {
   color: @green;
 }
-
-
-
-/* grid */
-.row {
-  margin: 0 -10px;
-  margin-bottom: 20px;
-}
-.row:last-child {
-  margin-bottom: 0;
-}
-[class*="col-"] {
-  padding: 10px;
+a {
+  font-size: @buttonText;
+  text-decoration: none;
+  &:link, &:visited, &:hover, &:active {
+    color: @white;
+  }
+  border: 1px solid @white;
+  border-radius: 10px;
+  padding: 10px 15px;
 }
 
-@media all and ( min-width: 600px ) {
-  .col-2-3 {
-    float: left;
-    width: 66.66%;
-  }
-  .col-1-2 {
-    float: left;
-    width: 50%;
-  }
-  .col-1-3 {
-    float: left;
-    width: 33.33%;
-  }
-  .col-1-4 {
-    float: left;
-    width: 25%;
-  }
-  .col-1-8 {
-    float: left;
-    width: 12.5%;
-  }
 
+
+@media (min-width: 30em) {
+    .row { width: 100%; display: table; table-layout: fixed; }
+    .col { display: table-cell; }
 }
-
- 
-
