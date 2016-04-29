@@ -5,6 +5,43 @@
 *:after {
   box-sizing: border-box;
 }
+html,
+body {
+  height: 100%;
+}
+body {
+  font-family: "Muli", Arial;
+  font-size: 1em;
+}
+body > div {
+  padding: 50px 100px;
+}
+h1 {
+  font-size: 1.875em;
+}
+h2 {
+  font-size: 1.12em;
+}
+.highlightText {
+  color: #53d998;
+}
+a {
+  font-size: 0.875em;
+  text-decoration: none;
+  border: 1px solid #ffffff;
+  border-radius: 10px;
+  padding: 10px 15px;
+}
+a:link,
+a:visited,
+a:hover,
+a:active {
+  color: #ffffff;
+}
+a:hover {
+  background-color: #ffffff;
+  color: #1f2222;
+}
 .greenButton {
   background-color: #53D998;
   box-shadow: 0px 3px 0px 0px rgba(57, 155, 108, 0.5);
@@ -78,25 +115,35 @@
   padding-left: 220px;
   color: #4d4d4b;
 }
+.secondSection .rightImage {
+  overflow: hidden;
+  padding-bottom: 50px;
+}
+.secondSection .rightImage div:nth-child(1) {
+  float: right;
+  padding-left: 50px;
+}
+.secondSection .rightImage .featureDescription {
+  line-height: 30px;
+}
+.secondSection .leftImage {
+  overflow: hidden;
+  padding-bottom: 50px;
+}
+.secondSection .leftImage div:nth-child(1) {
+  float: left;
+  padding-right: 50px;
+}
+.secondSection .leftImage .featureDescription {
+  line-height: 30px;
+}
+.secondSection:nth-child(even) .featureDescription {
+  padding-right: 50px;
+}
 .secondSection img {
   width: 100%;
   height: auto;
-  max-width: 400px;
-}
-.secondSection .row {
-  padding-bottom: 75px;
-}
-.secondSection .row .col {
-  vertical-align: middle;
-}
-.secondSection .row:nth-child(odd) .featureDescription {
-  padding-left: 50px;
-}
-.secondSection .row:nth-child(even) .featureDescription {
-  padding-right: 50px;
-}
-.secondSection .row:nth-child(even) img {
-  float: right;
+  max-width: 340px;
 }
 .secondSection span {
   color: #53d998;
@@ -136,63 +183,27 @@
   text-align: right;
   text-decoration: underline;
 }
-html,
-body {
-  height: 100%;
-}
-body {
-  font-family: "Muli", Arial;
-  font-size: 1em;
-}
-body > div {
-  padding: 50px 100px;
-}
-h1 {
-  font-size: 1.875em;
-}
-h2 {
-  font-size: 1.12em;
-}
-.highlightText {
-  color: #53d998;
-}
-a {
-  font-size: 0.875em;
-  text-decoration: none;
-  border: 1px solid #ffffff;
-  border-radius: 10px;
-  padding: 10px 15px;
-}
-a:link,
-a:visited,
-a:hover,
-a:active {
-  color: #ffffff;
-}
-a:hover {
-  background-color: #ffffff;
-  color: #1f2222;
-}
 /* Tablets and smaller laptops */
 @media (max-width: 884px) {
   h1 {
-    font-size: calc(1.725em);
-  }
-  h2 {
-    font-size: calc(1.07em);
+    font-size: calc(1.825em);
   }
   body {
-    font-size: 0.5em;
+    font-size: calc(0.75em);
   }
   body > div {
     padding: calc(25px) calc(50px);
+  }
+  a {
+    font-size: 1em;
+    padding: 6px 12px;
   }
   .hero div > h1 {
     line-height: 19px;
   }
   .hero div > p {
     line-height: 13.5px;
-    padding-bottom: 10px;
+    padding-bottom: 20px;
   }
   .hero div:nth-child(1) {
     padding-right: 20px;
@@ -201,30 +212,57 @@ a:hover {
     padding-right: 100px;
     padding-left: 100px;
   }
+  .secondSection .leftImage .featureDescription,
+  .secondSection .rightImage .featureDescription {
+    line-height: 20px;
+  }
   .footer {
-    font-size: 0.5em;
+    font-size: 0.75em;
     padding: 10px 10px;
   }
   .footer a {
     padding: 5px 5px;
   }
 }
-@media (max-width: 490px) {
+@media (max-width: 1260px) {
+  .secondSection {
+    padding-right: 70px;
+    padding-left: 70px;
+  }
+}
+@media (max-width: 768px) {
+  h1 {
+    font-size: calc(1.725em);
+  }
+  body > div {
+    padding: 25px;
+  }
   .hero {
     text-align: center;
   }
   .hero img {
     float: none;
+    max-width: 60vw;
   }
-  .hero .hero div:nth-child(1) {
+  .hero div:nth-child(1) {
     padding-left: 0;
     padding-right: 0;
   }
   .logoLoginHolder img {
     width: 44.5px;
   }
+  .secondSection {
+    padding-right: 40px;
+    padding-left: 40px;
+    text-align: center;
+  }
+  .secondSection .rightImage div:nth-child(1),
+  .secondSection .leftImage div:nth-child(1) {
+    float: none;
+    padding: 0;
+  }
   .footer {
-    line-height: 12px;
+    line-height: 16px;
   }
   .footer span:nth-child(1),
   .footer span:nth-child(2),
@@ -234,7 +272,7 @@ a:hover {
     width: 100%;
   }
 }
-@media (min-width: 491px) {
+@media (min-width: 769px) {
   .row {
     width: 100%;
     display: table;
