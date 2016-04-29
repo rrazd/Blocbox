@@ -125,11 +125,11 @@
   text-decoration: underline;
 }
 .footer span:nth-child(1) {
-  width: 10%;
+  width: 20%;
   text-align: left;
 }
 .footer span:nth-child(2) {
-  width: 80%;
+  width: 60%;
   text-align: center;
 }
 .footer span:nth-child(3) {
@@ -173,7 +173,68 @@ a:hover {
   background-color: #ffffff;
   color: #1f2222;
 }
-@media (min-width: 30em) {
+/* Tablets and smaller laptops */
+@media (max-width: 884px) {
+  h1 {
+    font-size: calc(1.725em);
+  }
+  h2 {
+    font-size: calc(1.07em);
+  }
+  body {
+    font-size: 0.5em;
+  }
+  body > div {
+    padding: calc(25px) calc(50px);
+  }
+  .hero div > h1 {
+    line-height: 19px;
+  }
+  .hero div > p {
+    line-height: 13.5px;
+    padding-bottom: 10px;
+  }
+  .hero div:nth-child(1) {
+    padding-right: 20px;
+  }
+  .secondSection {
+    padding-right: 100px;
+    padding-left: 100px;
+  }
+  .footer {
+    font-size: 0.5em;
+    padding: 10px 10px;
+  }
+  .footer a {
+    padding: 5px 5px;
+  }
+}
+@media (max-width: 490px) {
+  .hero {
+    text-align: center;
+  }
+  .hero img {
+    float: none;
+  }
+  .hero .hero div:nth-child(1) {
+    padding-left: 0;
+    padding-right: 0;
+  }
+  .logoLoginHolder img {
+    width: 44.5px;
+  }
+  .footer {
+    line-height: 12px;
+  }
+  .footer span:nth-child(1),
+  .footer span:nth-child(2),
+  .footer span:nth-child(3) {
+    text-align: center;
+    display: block;
+    width: 100%;
+  }
+}
+@media (min-width: 491px) {
   .row {
     width: 100%;
     display: table;
